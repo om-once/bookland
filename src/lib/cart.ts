@@ -21,3 +21,7 @@ export const itemDiscount: CartItem = {
   quantity: 4,
   discount: 10,
 };
+
+export function getItemTotal(item: CartItem): number {
+  return item.price * item.quantity;
+}
