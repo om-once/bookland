@@ -17,11 +17,16 @@ export const item: CartItem = {
 export const itemDiscount: CartItem = {
   id: '576142',
   title: 'Алхімізовані – СенЛінЮ',
-  price: 899.1,
+  price: 900,
   quantity: 4,
   discount: 10,
 };
 
 export function getItemTotal(item: CartItem): number {
-  return item.price * item.quantity;
+  const discount = item.discount ?? 0;
+  return (item.price - item.price * (discount / 100)) * item.quantity;
+}
+
+export function getCartTotal(items: CartItem[]): number {
+  return items.reduce((sum, cartItem) => sum + getItemTotal(cartItem), 0);
 }
