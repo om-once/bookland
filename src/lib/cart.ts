@@ -3,7 +3,7 @@ export type CartItem = {
   title: string;
   price: number;
   quantity: number;
-  discount?: number;
+  discount?: number; // відсотки, 10 = 10%
 };
 
 export const item: CartItem = {
@@ -19,5 +19,5 @@ export const itemDiscount: CartItem = {
   title: 'Алхімізовані – СенЛінЮ',
   price: 899.1,
   quantity: 4,
-  discount: 10, // відсотки, 10 = 10%
+  discount: 10,
 };
